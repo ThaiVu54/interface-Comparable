@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class ComparableCircleTest {
     public static void main(String[] args) {
@@ -12,7 +13,9 @@ public class ComparableCircleTest {
             System.out.println(circle);
         }
 
-        Arrays.sort(circles);
+//        Arrays.sort(circles);
+        Comparator circleComparator = new CircleComparator();
+        Arrays.sort(circles, circleComparator);
 
         System.out.println("After-sorted:");
         for (ComparableCircle circle : circles) {
